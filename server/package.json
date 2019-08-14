@@ -4,7 +4,11 @@
   "description": "MERN stack geography game",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ../client && npm start",
+    "dev": "concurrently \" npm run server\" \"npm run client\""
   },
   "author": "Tim Melcherson",
   "license": "MIT",
@@ -12,5 +16,9 @@
     "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "mongoose": "^5.6.9"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "proxy": "https://localhost:5000"
 }
